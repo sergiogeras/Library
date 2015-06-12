@@ -5,7 +5,7 @@
          version="3.1">
 
     <welcome-file-list>
-        <welcome-file>pages/index.jsp</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 
     <resource-ref>
@@ -14,4 +14,23 @@
         <res-auth>Container</res-auth>
         <res-sharing-scope>Shareable</res-sharing-scope>
     </resource-ref>
+
+    <jsp-config>
+        <jsp-property-group>
+            <display-name>headerAndFooter</display-name>
+            <url-pattern>/pages/*</url-pattern>
+            <page-encoding>UTF-8</page-encoding>
+            <include-prelude>/WEB-INF/jspf/header.jspf</include-prelude>
+            <include-coda>/WEB-INF/jspf/footer.jspf</include-coda>
+        </jsp-property-group>
+    </jsp-config>
+
+    <servlet>
+        <servlet-name>showImage</servlet-name>
+        <servlet-class>servlets.ShowImage</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>showImage</servlet-name>
+        <url-pattern>/ShowImage</url-pattern>
+    </servlet-mapping>
 </web-app>
